@@ -1,4 +1,3 @@
-import {Component} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
 import { HeroService } from './hero.service';
 import { Component, OnInit } from 'angular2/core';
@@ -6,7 +5,7 @@ import {Hero} from './hero';
 
 @Component({
   selector: 'my-hero-detail',
-  templateUrl: 'app/hero-detial.component.html',
+  templateUrl: 'app/hero-detail.component.html'
 })
 export class HeroDetailComponent {
     hero: Hero;
