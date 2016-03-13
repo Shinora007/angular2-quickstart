@@ -66,12 +66,16 @@ import {HeroService} from './hero.service';
         border-radius: 4px 0 0 4px;
     }
     `],
-    directives: [HeroDetailComponent]
+    directives: [HeroDetailComponent].
+    providers: [HeroService]
 })
 export class AppComponent {
     public title = "Tour of Heroes";
     public heroes = HEROES;
     selectedHero: Hero;
+    
+    constructor(private _heroService: HeroService) { }
+    
     onSelect(hero: Hero) { this.selectedHero = hero; }
 }
 
