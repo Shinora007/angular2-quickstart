@@ -7,21 +7,21 @@ interface Hero {
 
 @Component({
     selector: 'my-app',
-template:`
-  <h1>{{title}}</h1>
-  <h2>My Heroes</h2>
-    <ul class="heroes">
-    <li>
-      <!-- each hero goes here -->
-    </li>
-  </ul>
-  <h2>{{hero.name}} details!</h2>
-  <div><label>id: </label>{{hero.id}}</div>
-  <div>
-    <label>name: </label>
-    <div><input [(ngModel)]="hero.name" placeholder="name"></div>
-  </div>
-  `
+    template:`
+      <h1>{{title}}</h1>
+      <h2>My Heroes</h2>
+        <ul class="heroes">
+        <li *ngFor="#hero of heroes">
+          <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </li>
+      </ul>
+      <h2>{{hero.name}} details!</h2>
+      <div><label>id: </label>{{hero.id}}</div>
+      <div>
+        <label>name: </label>
+        <div><input [(ngModel)]="hero.name" placeholder="name"></div>
+      </div>
+      `
 })
 export class AppComponent {
     public title = "Tour of Heroes";
