@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 
 interface Hero {
-    id: name;
+    id: number;
     name : string;
 }
 
@@ -11,16 +11,18 @@ interface Hero {
       <h1>{{title}}</h1>
       <h2>My Heroes</h2>
         <ul class="heroes">
-        <li *ngFor="#hero of heroes">
-          <span class="badge">{{hero.id}}</span> {{hero.name}}
+        <li *ngFor="#hero of heroes" (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
         </li>
       </ul>
-      <h2>{{hero.name}} details!</h2>
-      <div><label>id: </label>{{hero.id}}</div>
+    <div *ngIf="selectedHero">
+      <h2>{{selectedHero.name}} details!</h2>
+      <div><label>id: </label>{{selectedHero.id}}</div>
       <div>
         <label>name: </label>
-        <div><input [(ngModel)]="hero.name" placeholder="name"></div>
+        <input [(ngModel)]="selectedHero.name" placeholder="name"/>
       </div>
+    </div>
       `,
     styles:[`
     .selected {
@@ -74,14 +76,13 @@ interface Hero {
 })
 export class AppComponent {
     public title = "Tour of Heroes";
-    public hero: Hero = {
-        id: 1,
-        name: 'Shinora007'
-    };
     public heroes = HEROES;
+    selectedHero: Hero;
+    onSelect(hero: Hero) { this.selectedHero = hero; }
 }
 
 var HEROES: Hero[] = [
+    { "id": 7, "name": "Shinora007" },
     { "id": 11, "name": "Mr. Nice" },
     { "id": 12, "name": "Narco" },
     { "id": 13, "name": "Bombasto" },
