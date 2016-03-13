@@ -65,7 +65,8 @@ import {HeroService} from './hero.service';
         margin-right: .8em;
         border-radius: 4px 0 0 4px;
     }
-    `]
+    `],
+    directives: [HeroDetailComponent]
 })
 export class AppComponent {
     public title = "Tour of Heroes";
