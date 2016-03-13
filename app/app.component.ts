@@ -7,11 +7,14 @@ interface Hero {
 
 @Component({
     selector: 'my-app',
-    template:`
+template:`
   <h1>{{title}}</h1>
   <h2>{{hero.name}} details!</h2>
   <div><label>id: </label>{{hero.id}}</div>
-  <div><label>name: </label>{{hero.name}}</div>
+  <div>
+    <label>name: </label>
+    <div><input value="{{hero.name}}" placeholder="name"></div>
+  </div>
   `
 })
 export class AppComponent {
