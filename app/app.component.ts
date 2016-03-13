@@ -3,6 +3,8 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 import { HeroService }     from './hero.service';
 import { HeroesComponent } from './heroes.component';
 import { DashboardComponent } from './dashboard.component';
+import { HeroDetailComponent } from './hero-detail.component';
+
 @Component({
   selector: 'my-app',
   template: `
@@ -28,6 +30,11 @@ import { DashboardComponent } from './dashboard.component';
     name: 'Dashboard',
     component: DashboardComponent,
     useAsDefault: true
+  },
+  {
+    path: 'detail/:id',
+    name: 'HeroDetail',
+    component: HeroDetailComponent
   }
 ])
 export class AppComponent {
