@@ -67,6 +67,7 @@ import {HeroService} from './hero.service';
     }
     `],
     directives: [HeroDetailComponent],
+    // don't use provider if you want to use parent's instance of service.
     providers: [HeroService]
 })
 export class AppComponent implements OnInit {
