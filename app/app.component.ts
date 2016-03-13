@@ -23,6 +23,7 @@ export class AppComponent {
         id: 1,
         name: 'Shinora007'
     };
+    public heroes = HEROES;
 }
 
 var HEROES: Hero[] = [
